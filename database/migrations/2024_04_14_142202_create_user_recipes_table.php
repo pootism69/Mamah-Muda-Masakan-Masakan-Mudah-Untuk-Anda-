@@ -24,6 +24,7 @@ return new class extends Migration
             $table->mediumText('image');
             $table->integer('timeToCook');
             $table->integer('tahun');
+            $table->string('category');
 
         });
     }

@@ -67,9 +67,10 @@
                         <button name = "submit" type="submit" id="masukBtn" class="Masuk">
                           Masuk
                       </button>
-                      <button id="daftarBtn" class="Daftar">Daftar</button>
+                      
         
                     </form>
+                    <a href="{{ route("register") }}" id="daftarBtn" class="btn Daftar">Daftar</a>
                 </div>
 
         </div>

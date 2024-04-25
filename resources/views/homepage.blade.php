@@ -13,14 +13,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Beranda</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="Home.html">
+            <a class="navbar-brand" href="{{ route("home") }}">
                 <img src="img/Rectangle 6.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
                             <li><a class="dropdown-item" href="Kategori.html">Olahan ayam</a></li>
                             <li><a class="dropdown-item" href="Kategori.html">Olahan daging</a></li>
                             <li><a class="dropdown-item" href="Kategori.html">Olahan seafood</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan sayurann</a></li>
+                            <li><a class="dropdown-item" href="Kategori.html">Olahan sayuran</a></li>
                             <li><a class="dropdown-item" href="Kategori.html">Cemilan</a></li>
                             <li><a class="dropdown-item" href="Kategori.html">Dessert</a></li>
                             
@@ -79,7 +79,7 @@
                         <a class="nav-link" href="favorit.html">Favorit</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="akun.html">
+                        <a class="nav-link" href="{{ route("akun") }}">
                             <img src="img/Vector.png" width="20" height="20" alt="">
 
                         </a>
@@ -122,7 +122,7 @@
                             <div class="card mt-4">
                                 <img src="img/Rectangle 10 (3).png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <p class="card-text text-center">Lainnya</p>
+                                    <p class="card-text text-center">2024</p>
                                 </div>
                             </div>
                         </a>
@@ -133,7 +133,7 @@
                         <div class="card mt-4">
                             <img src="img/Rectangle 11.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text text-center">Lainnya</p>
+                                <p class="card-text text-center">2023</p>
                             </div>
                         </div>
                     </a>
@@ -144,7 +144,7 @@
                         <div class="card mt-4">
                             <img src="img/Rectangle 12.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text text-center">Lainnya</p>
+                                <p class="card-text text-center">2022</p>
                             </div>
                         </div>
 
@@ -157,7 +157,7 @@
                         <div class="card mt-4">
                             <img src="img/Rectangle 13.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text text-center">Lainnya</p>
+                                <p class="card-text text-center">2021</p>
                             </div>
                         </div>
 
@@ -170,6 +170,32 @@
                         <div class="card mt-4">
                             <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                             <div class="card-body">
+                                <p class="card-text text-center">2020</p>
+                            </div>
+                        </div>
+
+                    </a>
+                    
+                </div>
+
+                <div class="col-lg-3 hovered-card">
+                    <a href="Viral.html" class="card-link">
+                        <div class="card mt-4">
+                            <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text text-center">2019</p>
+                            </div>
+                        </div>
+
+                    </a>
+                    
+                </div>
+
+                <div class="col-lg-3 hovered-card">
+                    <a href="Viral.html" class="card-link">
+                        <div class="card mt-4">
+                            <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
+                            <div class="card-body">
                                 <p class="card-text text-center">Lainnya</p>
                             </div>
                         </div>
@@ -177,6 +203,10 @@
                     </a>
                     
                 </div>
+
+                
+
+                
             </div>
             
         </div>
@@ -192,7 +222,7 @@
                         <div class="card mt-4">
                             <img src="img/Rectangle 10 (3).png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text text-center">Lainnya</p>
+                                <p class="card-text text-center">Masakan rumahan</p>
                             </div>
                         </div>
                     </a>
@@ -203,7 +233,7 @@
                     <div class="card mt-4">
                         <img src="img/Rectangle 11.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text text-center">Lainnya</p>
+                            <p class="card-text text-center">Olahan ayam</p>
                         </div>
                     </div>
                 </a>
@@ -214,7 +244,7 @@
                     <div class="card mt-4">
                         <img src="img/Rectangle 12.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text text-center">Lainnya</p>
+                            <p class="card-text text-center">Olahan daging</p>
                         </div>
                     </div>
 
@@ -227,7 +257,7 @@
                     <div class="card mt-4">
                         <img src="img/Rectangle 13.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text text-center">Lainnya</p>
+                            <p class="card-text text-center">Olahan seafood</p>
                         </div>
                     </div>
 
@@ -240,7 +270,33 @@
                     <div class="card mt-4">
                         <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text text-center">Lainnya</p>
+                            <p class="card-text text-center">Olahan sayuran</p>
+                        </div>
+                    </div>
+
+                </a>
+                
+            </div>
+
+            <div class="col-lg-3 hovered-card">
+                <a href="Kategori.html" class="card-link">
+                    <div class="card mt-4">
+                        <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Cemilan</p>
+                        </div>
+                    </div>
+
+                </a>
+                
+            </div>
+
+            <div class="col-lg-3 hovered-card">
+                <a href="Kategori.html" class="card-link">
+                    <div class="card mt-4">
+                        <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Dessert</p>
                         </div>
                     </div>
 
@@ -264,7 +320,7 @@
                         <div class="card mt-4">
                             <img src="img/Rectangle 12.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text text-center">Lainnya</p>
+                                <p class="card-text text-center">Nusantara</p>
                             </div>
                         </div>
 
@@ -277,7 +333,7 @@
                         <div class="card mt-4">
                             <img src="img/Rectangle 13.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text text-center">Lainnya</p>
+                                <p class="card-text text-center">Asia</p>
                             </div>
                         </div>
 
@@ -285,6 +341,18 @@
                     
                 </div>
     
+                <div class="col-lg-3 hovered-card">
+                    <a href="Khas.html" class="card-link">
+                        <div class="card mt-4">
+                        <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Western</p>
+                        </div>
+                    </div>
+                    </a>
+                    
+                </div>
+
                 <div class="col-lg-3 hovered-card">
                     <a href="Khas.html" class="card-link">
                         <div class="card mt-4">
