@@ -13,83 +13,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/stylelogin.css">
 
     <title>Akun kamu</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img/Rectangle 6.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="viralDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Viral
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="viralDropdown">
-                            <li><a class="dropdown-item" href="Viral.html">2019</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2020</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2021</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2022</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2023</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2024</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">Lainnya</a></li>
-
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="kategoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Kategori
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="kategoriDropdown">
-                            <li><a class="dropdown-item" href="Kategori.html">Masakan rumahan</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan ayam</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan daging</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan seafood</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan sayurann</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Cemilan</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Dessert</a></li>
-                            
-                            
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="makananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Makanan Khas
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="makananDropdown">
-                            <li><a class="dropdown-item" href="Khas.html">Nusantara</a></li>
-                            <li><a class="dropdown-item" href="Khas.html">Asia</a></li>
-                            <li><a class="dropdown-item" href="Khas.html">Western</a></li>
-                            <li><a class="dropdown-item" href="Khas.html">Lainnya</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="buat_resep2.html">Buat Resep</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="favorit.html">Favorit</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <img src="img/Vector.png" width="20" height="20" alt="">
-
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            @include('component/navbar')
         </div>
     </nav>
 
-
+ 
   <div class="container-fluid py-5">
     <div class="container">
       <h2 class="text-center py-3">Akun </h2>
@@ -97,20 +32,20 @@
             <div class="kotak">
                 <img src="img/Vector (1).png" alt="">
                 <div class="info">
-                    <i>Mama Risna</i>
-                    <p>Email</p>
+                    <i>{{auth()->user()->name}}</i>
+                    <p>{{auth()->user()->email}}</p>
                 </div>
             </div>
             
-                <div class="kotak3" onclick="pindahKeEditAkun()">
+                <a class="kotak3" href="{{ route('edit.account') }}">
                     <j>Edit</j>
-                </div>
+                </a>
 
             
             
-            <div class="kotak1" onclick="pindahKeresepkamu()">
+            <a class="kotak3" href="{{ route("user", ['filter' => auth()->user()->id ]) }}">
                 <j>Resep Kamu</j>
-            </div>
+            </a>
 
 
           <div class="kotak2" onclick="tampilkanPopUp()">
@@ -121,12 +56,13 @@
             <div class="popup-content">
                 <h2>Logout Berhasil</h2>
                 <p>Anda telah logout.</p>
-                <button onclick="konfirmasiLogout()">OK</button>
+                <a href ="sesi/logout" id="daftarBtn" class="btn Daftar">OK</a>
             </div>
         </div>
 
     </div>
   </div>
+ 
   
 
 
@@ -144,6 +80,7 @@
     -->
 
     <!--Javascript kita-->
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    
   </body>
 </html>

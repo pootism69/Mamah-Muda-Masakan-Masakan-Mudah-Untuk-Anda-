@@ -18,13 +18,15 @@ return new class extends Migration
             $table->string('title',10)->nullable();
             $table->mediumText('description')->nullable();
             $table->longText('instruction')->nullable();
-            $table->timestampTz('createdAt')->useCurrent();
             $table->string('origin')->nullable();
-            $table->integer('rating');
-            $table->mediumText('image');
-            $table->integer('timeToCook');
-            $table->integer('tahun');
-            $table->string('category');
+            $table->integer('rating')->nullable();
+            $table->mediumText('image')->nullable();
+            $table->string('timeToCook');
+            $table->string('tahun')->nullable();
+            $table->string('category')->nullable();
+            $table->string('tingkat')->nullable();
+            $table->string('ingredient')->nullable();
+            $table->timestamps();
 
         });
     }

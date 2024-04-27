@@ -17,17 +17,8 @@ function changeImage() {
     }
 }
 
-//pindah halaman dari akun ke edit akun
 
-function pindahKeEditAkun() {
-    window.location.href = "edit_akun.html";
-}
 
-//pindah ke resep kamu dari akun
-
-function pindahKeresepkamu() {
-    window.location.href = "resep_akun.html";
-}
 
 //LOGOUT
 // Tampilkan pop-up saat tombol logout diklik
@@ -36,11 +27,7 @@ function tampilkanPopUp() {
     popUp.style.display = "block";
 }
 
-// Konfirmasi logout
-function konfirmasiLogout() {
-    // Proses logout di sini, seperti menghapus session, membersihkan data, dll.
-    window.location.href = "login.html"; // Pindah ke halaman utama setelah logout
-}
+
 
 
 

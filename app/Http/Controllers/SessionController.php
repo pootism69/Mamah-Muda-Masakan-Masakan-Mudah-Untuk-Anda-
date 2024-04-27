@@ -14,7 +14,6 @@ class SessionController extends Controller
     }
 
     function login(Request $request){
-        Session::flash('name', $request->name);
         $request->validate([
             'name'=>'required',
             'password'=> 'required'
@@ -29,7 +28,7 @@ class SessionController extends Controller
         ];
 
         if(Auth::attempt($infologin)){
-            return 'success';
+            return redirect('/');
     } else {
         return redirect('sesi')->withErrors('username atau password salah');
     };
@@ -40,8 +39,6 @@ class SessionController extends Controller
     }
 
     function create(Request $request){
-        Session::flash('name', $request->name);
-        Session::flash('email', $request->email);
         $request->validate([
             'name'=>'required|unique:users',
             'email'=>'required|email|unique:users',
@@ -68,10 +65,55 @@ class SessionController extends Controller
         ];
 
         if(Auth::attempt($infologin)){
-            return 'success';
+            return redirect('/');
         } else {
             return redirect('register')->withErrors('pendaftaran gagal somehow');
         };
+
+
+    }
+
+    function akun(){
+        return view("/akun");
+    }
+
+    function logout(){
+        Auth::logout();
+        return redirect("/sesi");
+    }
+
+    public function edit()
+    {
+        $user = Auth::user();
+        return view('edituser', compact('user'));
+    }
+
+    public function update(Request $request)
+    {
+        // Validate incoming request
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'nullable|string|min:8', // Add any additional validation rules for the password if needed
+        ]);
+
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Update user details
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        // Check if password is provided and update if it is
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        }
+
+        // Save the updated user
+        $user->save();
+
+        // Redirect back with success message or handle response as needed
+        return redirect()->back()->back();
     }
 
 

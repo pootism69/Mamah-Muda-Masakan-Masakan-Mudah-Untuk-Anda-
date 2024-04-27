@@ -1,0 +1,328 @@
+*{
+    font-family: 'Poppins', sans-serif;
+  }
+  
+.dropdown-menu{
+    background-color: #C91108;
+    color: white;
+
+}
+.container h1{
+    
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 524;
+        font-size: 40px;
+        line-height: 96px;
+        color: #C91108;
+    
+}
+
+.input-group button{
+    color: white;
+    background-color: #C91108;
+}
+
+.hovered-card{
+    transition: .5s;
+}
+.hovered-card:hover{
+    transform: scale(1.1);
+    
+}
+
+.container .a {
+    background-color: #C91108; /* Warna merah */
+    color: white; /* Warna teks putih */
+    border-color: #C91108; /* Warna border sama dengan background */
+    cursor: pointer; /* Menjadikan kursor menjadi tanda tangan saat dihover */
+}
+
+.container .a:hover {
+    background-color: #a80d05; /* Warna merah yang sedikit lebih gelap saat tombol dihover */
+    border-color: #a80d05; /* Warna border saat tombol dihover */
+}
+
+
+
+.kotak {
+    display: flex;
+    justify-content: flex-start; /* Pusatkan elemen dari sisi kiri */
+    align-items: center; /* Pusatkan secara vertikal */
+    max-width: 1178px; /* Lebar maksimum kotak */
+    background-color: white; /* Warna latar belakang */
+    margin: 30px 20px; /* Jarak antara kotak */
+    padding: 20px; /* Padding untuk memisahkan isi kotak dari tepi kotak */
+    text-align: left; /* Pusatkan teks */
+    border: 2px solid black; /* Warna dan lebar border */
+    border-radius: 20px; /* Radius sudut */
+    color: black; /* Warna teks */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+.kotak img {
+    width: 100px; /* Ukuran gambar */
+    height: 100px; /* Ukuran gambar */
+    margin-right: 20px; /* Berikan jarak antara gambar dan info */
+}
+.kotak i{
+    font-size: 36px;
+}
+
+
+
+.kotak1 {
+    display: flex;
+    justify-content: flex-start; /* Pusatkan elemen dari sisi kiri */
+    align-items: center; /* Pusatkan secara vertikal */
+    height: auto; /* Biarkan tinggi menyesuaikan konten */
+    max-width: 1178px; /* Lebar maksimum kotak */
+    background-color: #C91108; /* Warna latar belakang */
+    margin: 30px 20px; /* Jarak antara kotak */
+    padding: 20px; /* Padding untuk memisahkan isi kotak dari tepi kotak */
+    text-align: left; /* Pusatkan teks */
+    border: 2px solid #C91108; /* Warna dan lebar border */
+    color: white; /* Warna teks */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    border-radius: 10px;
+}
+
+.kotak1:hover {
+    cursor:pointer; 
+}
+
+
+.kotak2 {
+    display: flex;
+    justify-content: flex-start; /* Pusatkan elemen dari sisi kiri */
+    align-items: center; /* Pusatkan secara vertikal */
+    height: auto; /* Biarkan tinggi menyesuaikan konten */
+    max-width: 1178px; /* Lebar maksimum kotak */
+    background-color: white; /* Warna latar belakang */
+    margin: 30px 20px; /* Jarak antara kotak */
+    padding: 20px; /* Padding untuk memisahkan isi kotak dari tepi kotak */
+    text-align: left; /* Pusatkan teks */
+    border: 2px solid #C91108; /* Warna dan lebar border */
+    color: #C91108; /* Warna teks */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.kotak2:hover {
+    cursor:pointer; 
+}
+
+.kotak3 {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start; /* Pusatkan elemen dari sisi kiri */
+    align-items: center; /* Pusatkan secara vertikal */
+    height: 80px; /* Ubah tinggi menjadi 80 piksel */
+    max-width: 1178px; /* Lebar maksimum kotak */
+    background-color: #C91108; /* Warna latar belakang */
+    margin: 30px 20px; /* Jarak antara kotak */
+    padding: 20px; /* Padding untuk memisahkan isi kotak dari tepi kotak */
+    text-align: left; /* Pusatkan teks */
+    border: 2px solid #C91108; /* Warna dan lebar border */
+    color: white; /* Warna teks */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    border-radius: 10px;
+    
+}
+
+.kotak3:hover {
+    cursor:pointer; 
+}
+
+
+j {
+    margin-top: 10px; /* Atur jarak atas teks */
+    margin-left: 30px;
+    font-size: 36px;
+}
+
+.keterangan{
+    font-size: 20px;
+}
+
+h5{
+    font-size: 36px;
+    color: #C91108;
+}
+
+.keterangan2 .row > div {
+    border-right: 3px solid black;
+    padding-right: 10px; /* Optional: Tambahkan ruang di sebelah kanan untuk memisahkan teks dari garis */
+}
+
+.container1 .Edit{
+    width: 398px;
+  height: 42px;
+  background: #C91108;
+  border-radius: 8px;
+  border-color: #C91108;
+  color: white;
+  margin-top: 20px;
+
+}
+
+
+.image-input{
+    border: solid 1px #ccc;
+    padding: 10px 30px 10px 5px;
+
+}
+
+.navbar {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan dengan pergeseran vertikal 2px, blur 4px, dan warna hitam dengan transparansi 0.1 */
+  }
+
+
+  .rating-circle {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #C91108 ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.rating-number {
+    font-size: 12px;
+}
+
+.custom-select-red {
+    background-color: #C91108;
+    color: white;
+}
+
+.custom-select-red::after {
+    content: '\25BE'; /* Ini adalah kode untuk ikon panah ke bawah */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.custom-select-red option {
+    background-color: white;
+    color: black;
+}
+
+
+
+.card-link {
+    color: #424242; /* Mengubah warna teks tautan menjadi merah */
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: #C91108; /* Mengubah warna teks tautan menjadi merah tua saat dihover */
+}
+
+.account-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+    color: #424242;
+    text-decoration: none;
+}
+
+.account-box:hover {
+    
+    transform: scale(1.1);
+    color: #C91108;
+}
+
+.gambar-akun {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.text-akun {
+    flex: 1;
+}
+  
+
+/*css untuk tombol simpan resep*/
+.zoomable {
+    transition: transform 0.5s;
+}
+
+.zoomable:hover {
+    transform: scale(1.1);
+}
+
+
+/*css untuk gambar di info resep*/
+
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/*css untuk nama akun di halaman info*/
+
+.account_name{
+    color: #424242;
+    font-weight: 500;
+
+}
+    
+
+.account_name:hover{
+    color: #C91108;
+}
+
+.detail-info{
+    color: #C91108;
+    font-weight: 600;
+}
+
+
+/*gaya pop up*/
+
+.popup {
+    display: none; /* Mulai tersembunyi */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang semi-transparent */
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

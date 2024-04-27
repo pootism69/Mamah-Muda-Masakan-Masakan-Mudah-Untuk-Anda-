@@ -13,12 +13,25 @@ class user_recipe extends Model
         'title',
         'description',
         'instruction',
-        'createdAt',
         'origin',
         'rating',
         'image',
         'timeToCook',
         'tahun',
-        'category'
+        'category',
+        'tingkat',
+        'ingredient'
     ];
+    protected $primaryKey = "recipeId";
+
+    public function user(){
+        return $this->belongsTo(User::class, 'userId');
+    }
+
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+    
+    
+    
 }

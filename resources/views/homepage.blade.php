@@ -18,92 +18,28 @@
     <title>Beranda</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route("home") }}">
-                <img src="img/Rectangle 6.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="viralDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Viral
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="viralDropdown">
-                            <li><a class="dropdown-item" href="Viral.html">2019</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2020</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2021</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2022</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2023</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">2024</a></li>
-                            <li><a class="dropdown-item" href="Viral.html">Lainnya</a></li>
-
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="kategoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Kategori
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="kategoriDropdown">
-                            <li><a class="dropdown-item" href="Kategori.html">Masakan rumahan</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan ayam</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan daging</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan seafood</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Olahan sayuran</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Cemilan</a></li>
-                            <li><a class="dropdown-item" href="Kategori.html">Dessert</a></li>
-                            
-                            
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="makananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Makanan Khas
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="makananDropdown">
-                            <li><a class="dropdown-item" href="Khas.html">Nusantara</a></li>
-                            <li><a class="dropdown-item" href="Khas.html">Asia</a></li>
-                            <li><a class="dropdown-item" href="Khas.html">Western</a></li>
-                            <li><a class="dropdown-item" href="Khas.html">Lainnya</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="buat_resep2.html">Buat Resep</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="favorit.html">Favorit</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route("akun") }}">
-                            <img src="img/Vector.png" width="20" height="20" alt="">
-
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            @include('component/navbar')
         </div>
     </nav>
-
 
     <div class="container-fluid banner d-flex align-items-center">
         <div class="container">
             <h1 class="text-center display-5 mb-3">Yuk cari resep kesukaanmu</h1>
             <!-- Search-->
+            <form action="/search" method="GET">
             <div class="col-8 offset-2 mx-auto">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Cari resep atau nama akun" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <a href="Cari.html">
-                        <button class="btn btn-outline-secondary btn-cari" type="button" id="button-addon2">Cari</button>
+                    <input name="search" type="text" class="form-control" placeholder="Cari resep atau nama akun" aria-label="Recipient's username" aria-describedby="button-addon2">
+                
+                    <button class="btn btn-outline-secondary btn-cari" type="submit" id="button-addon2">Cari</button>
 
-                    </a>
+                    
                     
                 </div>
             </div>
+            </form>
         </div>
     </div>
 
@@ -118,7 +54,7 @@
             
                 <div class="row mt-3 justify-content-center">
                     <div class="col-lg-3 hovered-card">
-                        <a href="Viral.html" class="card-link">
+                        <a href="{{ route("year", ['filter' => "2024"]) }}" class="card-link">
                             <div class="card mt-4">
                                 <img src="img/Rectangle 10 (3).png" class="card-img-top" alt="...">
                                 <div class="card-body">
@@ -129,7 +65,7 @@
                     </div>
     
                 <div class="col-lg-3 hovered-card">
-                    <a href="Viral.html" class="card-link">
+                    <a href="{{ route("year", ['filter' => "2023"]) }}" class="card-link">
                         <div class="card mt-4">
                             <img src="img/Rectangle 11.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -140,7 +76,7 @@
                 </div>
     
                 <div class="col-lg-3 hovered-card">
-                    <a href="Viral.html" class="card-link">
+                    <a href="{{ route("year", ['filter' => "2022"]) }}" class="card-link">
                         <div class="card mt-4">
                             <img src="img/Rectangle 12.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -153,7 +89,7 @@
                 </div>
     
                 <div class="col-lg-3 hovered-card" >
-                    <a href="Viral.html" class="card-link">
+                    <a href="{{ route("year", ['filter' => "2021"]) }}" class="card-link">
                         <div class="card mt-4">
                             <img src="img/Rectangle 13.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -166,7 +102,7 @@
                 </div>
     
                 <div class="col-lg-3 hovered-card">
-                    <a href="Viral.html" class="card-link">
+                    <a href="{{ route("year", ['filter' => "2020"]) }}" class="card-link">
                         <div class="card mt-4">
                             <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -179,7 +115,7 @@
                 </div>
 
                 <div class="col-lg-3 hovered-card">
-                    <a href="Viral.html" class="card-link">
+                    <a href="{{ route("year", ['filter' => "2019"]) }}" class="card-link">
                         <div class="card mt-4">
                             <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -218,7 +154,7 @@
             
             <div class="row mt-3 justify-content-center">
                 <div class="col-lg-3 hovered-card">
-                    <a href="Kategori.html" class="card-link">
+                    <a href="{{ route("category", ['filter' => "masakan rumahan"]) }}" class="card-link">
                         <div class="card mt-4">
                             <img src="img/Rectangle 10 (3).png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -229,7 +165,7 @@
                 </div>
 
             <div class="col-lg-3 hovered-card">
-                <a href="Kategori.html" class="card-link">
+                <a href="{{ route("category", ['filter' => "olahan ayam"]) }}" class="card-link">
                     <div class="card mt-4">
                         <img src="img/Rectangle 11.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -240,7 +176,7 @@
             </div>
 
             <div class="col-lg-3 hovered-card">
-                <a href="Kategori.html" class="card-link">
+                <a href="{{ route("category", ['filter' => "Olahan daging"]) }}" class="card-link">
                     <div class="card mt-4">
                         <img src="img/Rectangle 12.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -253,7 +189,7 @@
             </div>
 
             <div class="col-lg-3 hovered-card" >
-                <a href="Kategori.html" class="card-link">
+                <a href="{{ route("category", ['filter' => "Olahan seafood"]) }}" class="card-link">
                     <div class="card mt-4">
                         <img src="img/Rectangle 13.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -266,7 +202,7 @@
             </div>
 
             <div class="col-lg-3 hovered-card">
-                <a href="Kategori.html" class="card-link">
+                <a href="{{ route("category", ['filter' => "Olahan sayuran"]) }}"class="card-link">
                     <div class="card mt-4">
                         <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -279,7 +215,7 @@
             </div>
 
             <div class="col-lg-3 hovered-card">
-                <a href="Kategori.html" class="card-link">
+                <a href="{{ route("category", ['filter' => "Cemilan"]) }}" class="card-link">
                     <div class="card mt-4">
                         <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -292,7 +228,7 @@
             </div>
 
             <div class="col-lg-3 hovered-card">
-                <a href="Kategori.html" class="card-link">
+                <a href="{{ route("category", ['filter' => "Dessert"]) }}" class="card-link">
                     <div class="card mt-4">
                         <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -316,7 +252,7 @@
             <div class="row mt-4 justify-content-center">
                 
                 <div class="col-lg-3 hovered-card">
-                    <a href="Khas.html" class="card-link">
+                    <a href="{{ route("asal", ['filter' => "Nusantara"]) }}" class="card-link">
                         <div class="card mt-4">
                             <img src="img/Rectangle 12.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -329,7 +265,7 @@
                 </div>
     
                 <div class="col-lg-3 hovered-card">
-                    <a href="Khas.html" class="card-link">
+                    <a href="{{ route("asal", ['filter' => "Asia"]) }}" class="card-link">
                         <div class="card mt-4">
                             <img src="img/Rectangle 13.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -342,7 +278,7 @@
                 </div>
     
                 <div class="col-lg-3 hovered-card">
-                    <a href="Khas.html" class="card-link">
+                    <a href="{{ route("asal", ['filter' => "Western"]) }}" class="card-link">
                         <div class="card mt-4">
                         <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -354,7 +290,7 @@
                 </div>
 
                 <div class="col-lg-3 hovered-card">
-                    <a href="Khas.html" class="card-link">
+                    <a href="{{ route("asal", ['filter' => "Lainya"]) }}" class="card-link">
                         <div class="card mt-4">
                         <img src="img/Rectangle 10 (2).png" class="card-img-top" alt="...">
                         <div class="card-body">

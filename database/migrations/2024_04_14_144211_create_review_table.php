@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('recipeId')->references('recipeId')->on('user_recipes')->onUpdate('cascade')->onDelete('cascade');;
             $table->string('comment')->nullable();
             $table->smallInteger('rating')->nullable();
-            $table->timestampTz('dateReviewed')->useCurrent();
+            $table->timestamps();
         });
     }
 
