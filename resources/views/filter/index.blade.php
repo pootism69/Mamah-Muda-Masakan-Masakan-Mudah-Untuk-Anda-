@@ -26,28 +26,33 @@
 
 
 
+    
+    
 
     <div class="container-fluid py-5">
         <div class="container">
             <h3 class="text-center">{{ $search }}</h3>
             
             <div class="row mt-3 justify-content-center">
-
-                @foreach($user_recipes as $user_recipe)
-                <div class="col-lg-3 hovered-card">
-                        <a href="{{ route("resep", ['filter' => $user_recipe->recipeId ]) }}" class="card-link">
-                            <div class="card mt-4">
-                                <img src="img/Rectangle 10 (3).png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text text-left">{{ $user_recipe->title }}</p>
+                @if(!$user_recipes->isEmpty())
+                    @foreach($user_recipes as $user_recipe)
+                    <div class="col-lg-3 hovered-card">
+                            <a href="{{ route("resep", ['filter' => $user_recipe->recipeId ]) }}" class="card-link">
+                                <div class="card mt-4">
+                                    <img src="img/Rectangle 10 (3).png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text text-left">{{ $user_recipe->title }}</p>
+                                    </div>
+                                    <div class="rating-circle">
+                                        <span class="rating-number">{{ $user_recipe->rating }}</span>
+                                    </div>
                                 </div>
-                                <div class="rating-circle">
-                                    <span class="rating-number">{{ $user_recipe->rating }}</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
+                            </a>
+                        </div>
+                    @endforeach
+                @else 
+                    <center><h1>makanan tidak ditemukan</h1></center>
+                @endif
 
                 
                 

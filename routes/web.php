@@ -30,6 +30,8 @@ Route::get('/resep/{filter}', [RecipeController::class, 'info'])->name('resep');
 Route::get('/user/{filter}', [AsalController::class, 'user'])->name('user');
 Route::post('/resep/{filter}/createReview', [RecipeController::class,'createReview']);
 Route::delete('/delete-resep/{filter}', [RecipeController::class, 'destroy'])->name('delete.resep');
+Route::get('/resep/{filter}/edit', [RecipeController::class, 'edit'])->name('edit.resep');
+Route::put('/resep/{filter}/edit/update', [RecipeController::class, 'update']);
 
 Route::get('/post', [RecipeController::class,'post'])->name('post');
 Route::post('/post/create', [RecipeController::class,'create']);

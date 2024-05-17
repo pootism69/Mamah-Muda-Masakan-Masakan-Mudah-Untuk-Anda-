@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('recipeId');
             $table->unsignedInteger('userId')->nullable();
             $table->foreign('userId')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');;
-            $table->string('title',10)->nullable();
+            $table->string('title',50)->nullable();
             $table->mediumText('description')->nullable();
             $table->longText('instruction')->nullable();
             $table->string('origin')->nullable();

@@ -15,7 +15,7 @@
     
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <title>Membuat resep</title>
+    <title>Edit resep</title>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,22 +24,23 @@
         </div>
     </nav>
     
-    <form method="POST" action ="post/create" class="container-fluid py-5">
+    <form method="POST" action ="{{ url('/resep/' . $search . '/edit/update') }}" class="container-fluid py-5">
         @csrf
+        @method('put')
         <div class="container1">
-            <h3 class="text-center py-5">Buat resep</h3>
+            <h3 class="text-center py-5">Edit resep</h3>
             
             <div class="row mb-4">
                 <label for="Nama_resep" class="col-sm-2 col-form-label">Nama Resep</label>
                 <div class="col-sm-5">
-                    <input type="name" name="name" class="form-control" id="Nama_resep">
+                    <input type="name" name="name" class="form-control" id="Nama_resep" value = "{{$data->title}}">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="Kategori" class="col-sm-2 col-form-label">Kategori</label>
                 <div class="col-sm-3">
-                    <select type="category" name="category" class="form-select custom-select-red" id="autoSizingSelect">
+                    <select type="category" name="category" class="form-select custom-select-red" id="autoSizingSelect" value = "{{$data->category}}">
                         <option value="Masakan rumahan">Masakan rumahan</option>
                         <option value="Olahan ayam">Olahan ayam</option>
                         <option value="Olahan daging">Olahan daging</option>
@@ -54,7 +55,7 @@
             <div class="row mb-3">
                 <label for="Viral" class="col-sm-2 col-form-label">Apakah Resep ini pernah viral?</label>
                 <div class="col-sm-3">
-                    <select type="tahun" name="tahun" class="form-select custom-select-red" id="autoSizingSelect">
+                    <select type="tahun" name="tahun" class="form-select custom-select-red" id="autoSizingSelect" value = "{{$data->tahun}}">
                         <option value="Bukan makanan viral">Bukan makanan viral</option>
                         <option value="2024">2024</option>
                         <option value="2023">2023</option>
@@ -70,7 +71,7 @@
             <div class="row mb-3">
                 <label for="Khas" class="col-sm-2 col-form-label">Apakah resep ini makanan khas?</label>
                 <div class="col-sm-3">
-                    <select type="khas" name="khas" class="form-select custom-select-red" id="autoSizingSelect">
+                    <select type="khas" name="khas" class="form-select custom-select-red" id="autoSizingSelect" value = "{{$data->origin}}">
                         
                         <option value="Bukan makanan khas">Bukan makanan khas</option>
                         <option value="Nusantara">Nusantara</option>
@@ -84,7 +85,7 @@
             <div class="row mb-3">
                 <label for="kesulitan" class="col-sm-2 col-form-label">Apakah resep ini mudah dibuat?</label>
                 <div class="col-sm-3">
-                    <select type="tingkat" name="tingkat" class="form-select custom-select-red" id="autoSizingSelect">
+                    <select type="tingkat" name="tingkat" class="form-select custom-select-red" id="autoSizingSelect" value = "{{$data->tingkat}}">
                         <option value="Mudah">Mudah</option>
                         <option value="Sedang">Sedang</option>
                         <option value="Sulit">Sulit</option>
@@ -96,7 +97,7 @@
             <div class="row mb-4">
                 <label for="waktu" class="col-sm-2 col-form-label">Estimasi waktu dari resep ini</label>
                 <div class="col-sm-1">
-                    <input type="waktu" name="waktu" class="form-control" id="waktu">
+                    <input type="waktu" name="waktu" class="form-control" id="waktu" value = "{{$data->timeToCook}}">
                 </div>
                 
 
@@ -105,8 +106,8 @@
             <div class="row mb-3">
                 <label for="Bahan" class="col-sm-2 col-form-label">Bahan</label>
                 <div class="form-floating col-sm-5">
-                    <textarea type="bahan" name="bahan" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" value="">1. Bahan 1 (dan seterusnya)
-
+                    <textarea type="bahan" name="bahan" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">
+                    {{$data->ingredient}}
                     </textarea>
                     <label for="floatingTextarea2"></label>
                   </div>
@@ -115,7 +116,7 @@
             <div class="row mb-3">
                 <label for="Cara" class="col-sm-2 col-form-label">Cara memasak</label>
                 <div class="form-floating col-sm-5">
-                    <textarea type="instruction" name="instruction" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">1. tahap 1 (dan seterusnya)</textarea>
+                    <textarea type="instruction" name="instruction" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" >{{$data->instruction}}</textarea>
                     <label for="floatingTextarea2"></label>
                   </div>
             </div>
@@ -134,7 +135,7 @@
 
                 <div class="row mb-4">
                     <div class="col-sm-5 offset-sm-2 justify-content-center"> <!-- Offset-sm-2 untuk menyesuaikan posisi tombol -->
-                        <button type="button" class="Edit" onclick="tampilkanPopUpBuatresep()">Buat resep</button> <!-- Menambahkan kelas w-100 untuk membuat tombol menyesuaikan lebar layar -->
+                        <button type="button" class="Edit" onclick="tampilkanPopUpBuatresep()">Edit resep</button> <!-- Menambahkan kelas w-100 untuk membuat tombol menyesuaikan lebar layar -->
                       
                         <div id="popupbuatresep" class="popup">
                             <div class="popup-content">

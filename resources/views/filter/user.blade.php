@@ -34,7 +34,8 @@
             @endforeach
             <div class="row mt-3 justify-content-center">
 
-                @foreach($user_recipes as $user_recipe)
+            @if(!$user_recipes->isEmpty())
+            @foreach($user_recipes as $user_recipe)
                 <div class="col-lg-3 hovered-card">
                         <a href="{{ route("resep", ['filter' => $user_recipe->recipeId ]) }}" class="card-link">
                             <div class="card mt-4">
@@ -46,16 +47,28 @@
                                     <span class="rating-number">{{ $user_recipe->rating }}</span>
                                 </div>
                                 @if($user_recipe->user->id == auth()->user()->id)
-                                <form action="{{ route("delete.resep", ['filter' => "$user_recipe->recipeId"]) }}" method="POST">
+                                 <div>
+                                    <form action="{{ route("delete.resep", ['filter' => "$user_recipe->recipeId"]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit">Hapus</button>
+                                    </form>
+                                </div>
+                                <div>
+                                <form action="{{ route("edit.resep", ['filter' => "$user_recipe->recipeId"]) }}" method="GET">
                                 @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Hapus</button>
+                                <button class="btn btn-primary" type="submit">edit</button>
                                 </form>
+                                </div>
+                                
                                 @endif
                             </div>
                         </a>
                     </div>
                 @endforeach
+                @else 
+                    <center><h1>makanan tidak ditemukan</h1></center>
+                @endif
 
                 
                 

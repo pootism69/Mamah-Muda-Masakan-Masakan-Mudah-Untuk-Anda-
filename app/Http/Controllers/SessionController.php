@@ -113,7 +113,7 @@ class SessionController extends Controller
         $user->save();
 
         // Redirect back with success message or handle response as needed
-        return redirect()->back()->back();
+        return redirect("/akun");
     }
 
 

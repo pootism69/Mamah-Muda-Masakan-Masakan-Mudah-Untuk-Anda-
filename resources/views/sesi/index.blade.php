@@ -47,12 +47,12 @@
 
         </div>
         <div class="login-right w-50 h-100">
-            @include ('component/pesan')
             <div class="row justify-content-center align-items-center h-100">
                 <div class="col-8"> <!--ini ukurannya belum menyesuaikan -->
                     <div class="header">
                         <h1>Selamat datang</h1>
                     </div>
+                    @include ('component/pesan')
         
                     <form action ="sesi/login" method= "POST" class="login-form" >
                         @csrf

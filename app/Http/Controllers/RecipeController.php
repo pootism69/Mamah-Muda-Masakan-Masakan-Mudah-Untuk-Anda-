@@ -78,4 +78,38 @@ class RecipeController extends Controller
         user_recipe::destroy($filter);
         return redirect()->route("user", ['filter' => auth()->user()->id ]);
     }
+
+    public function edit($filter){
+        $data = user_recipe::where('recipeId', $filter)->first();
+        return view('editresep')->with('data', $data)->with('search', $filter);
+    }
+
+    function update(Request $request, $filter){
+        $request->validate([
+            'name'=>'required',
+            'bahan'=>'required',
+            'instruction'=> 'required',
+            'waktu' => 'required',
+        ],[
+            'name.required'=>'harap masukan nama',
+            'bahan'=>'harap masukan bahan',
+            'instruction'=> 'harap masukan instruksi',
+            'waktu' => 'harap maksukan waktu',
+        ]);
+
+        $data =[
+            'title'=>$request->name,
+            'category'=> $request->category,
+            'tahun'=> $request->tahun,
+            'origin'=> $request->khas,
+            'tingkat'=> $request->tingkat, 
+            'timeToCook'=> $request->waktu,
+            'ingredient'=> $request->bahan,
+            'instruction'=> $request->instruction,              
+        ];
+        user_recipe::where('recipeId', $filter)->update($data);
+
+        return redirect()->route("resep", ['filter' => $filter ])->with('success', 'Resep Berhasil di edit');
+    }
+
 }

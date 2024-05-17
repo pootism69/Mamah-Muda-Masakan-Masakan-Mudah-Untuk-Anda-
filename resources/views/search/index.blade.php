@@ -50,24 +50,28 @@
         <div class="container">
             <h3 class="text-center">Hasil pencarian untuk {{ $search }}</h3>
             <div class="row mt-3 justify-content-center">
-            @foreach ($user_recipes as $user_recipe)
-            
-                <div class="col-lg-3 hovered-card">
-                    <a href="{{ route("resep", ['filter' => $user_recipe->recipeId ]) }}" class="card-link">
-                        <div class="card mt-4">
-                            <img src="img/Rectangle 10 (3).png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text text-left">{{ $user_recipe->title }}</p>
-                            </div>
-                            <div class="rating-circle">
-                                <span class="rating-number">{{ $user_recipe->rating }}</span>
-                            </div>
+            @if(!$user_recipes->isEmpty())
+                    @foreach($user_recipes as $user_recipe)
+                    <div class="col-lg-3 hovered-card">
+                            <a href="{{ route("resep", ['filter' => $user_recipe->recipeId ]) }}" class="card-link">
+                                <div class="card mt-4">
+                                    <img src="img/Rectangle 10 (3).png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <p class="card-text text-left">{{ $user_recipe->title }}</p>
+                                    </div>
+                                    <div class="rating-circle">
+                                        <span class="rating-number">{{ $user_recipe->rating }}</span>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
+                    @endforeach
+                @else 
+                    <center><h1>makanan tidak ditemukan</h1></center>
+                @endif
             
 
-            @endforeach
+            
             </div>
         </div>
     </div>
@@ -84,15 +88,19 @@
         <div class="row justify-content-center">
             
             <div class="col-10 col-md-8 mx-auto my-4">
-            @foreach($users as $user)
-                <div class="mt-4">
-                    <a href="{{ route("user", ['filter' => $user->id ]) }}", class ="account-box">
-                        <img src="img/Vector (3).png" class="gambar-akun" alt="Avatar">
-                        <div class="text-akun">{{$user->name}}</div>
-                    </a>
-                    
-                </div>
-            @endforeach
+            @if(!$users->isEmpty())
+                @foreach($users as $user)
+                    <div class="mt-4">
+                        <a href="{{ route("user", ['filter' => $user->id ]) }}", class ="account-box">
+                            <img src="img/Vector (3).png" class="gambar-akun" alt="Avatar">
+                            <div class="text-akun">{{$user->name}}</div>
+                        </a>
+                        
+                    </div>
+                @endforeach
+                @else 
+                    <center><h1>user tidak ditemukan</h1></center>
+                @endif
         </div>
         
         
