@@ -19,63 +19,56 @@
   </head>
   <body>
     
-    <section class="login  d-flex">
-        
-        <div class="login-left w-50 h-100">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/Mamah muda logo-red png 2.png" class="d-block w-100" alt="...">
+  
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+
+      <div class="row border rounder-5 p-3 bg-white shadow box-area">
+
+
+          <div class="col-md-6 rounder-4 d-flex justify-content-center align-items-center flex-column left-box">
+              <div class="featured-image mb-3"></div>
+              <img src="img/Mamah muda logo-red png 2.png" class="img-fluid" alt="width: 250px;">
+          </div>
+
+
+          <div class="col-md-6 right-box">
+                  <div class="row align-items-center">
+                      <div class="header-text mb-4"></div>
+                          <header> 
+                              <h1>Selamat Datang</h1>
+                          </header>
+                          @include ('component/pesan')
+                          <div class="login-form">
+                          <form action ="sesi/login" method= "POST" class="login-form" >
+                              @csrf
+                              
+                                <label for="name" class="form-label">Username</label>
+                                <input type="name" name="name" class="form-control" id="Username" placeholder="Masukkan Username" value="{{ Session::get('user') }}">
+              
+                                <label for="password" class="form-label">Password</label>
+                                <input type="Password" name= "password"class="form-control" id="Password" placeholder="Masukkan kata sandi">
+              
+              
+                                <button name = "submit" type="submit" id="masukBtn" class="Masuk">Masuk</button>
+                                    <a href="{{ route("register") }}" id="daftarBtn" class="btn Daftar">Daftar</a>
+              
+                              
+                          </form>
+                          </div>
+                          
+
+                          
                   </div>
-                  <div class="carousel-item">
-                    <img src="img/image 2.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/image 3.png" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+          </div>
+
+       </div>
+  </div>
+    
             
 
-        </div>
-        <div class="login-right w-50 h-100">
-            <div class="row justify-content-center align-items-center h-100">
-                <div class="col-8"> <!--ini ukurannya belum menyesuaikan -->
-                    <div class="header">
-                        <h1>Selamat datang</h1>
-                    </div>
-                    @include ('component/pesan')
         
-                    <form action ="sesi/login" method= "POST" class="login-form" >
-                        @csrf
-                        <label for="name" class="form-label">Username</label>
-                        <input type="name" name="name" class="form-control" id="Username" placeholder="Masukkan Username" value="{{ Session::get('user') }}">
-        
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="Password" placeholder="Masukkan kata sandi">
-        
-                        <a href="#" class="text-decoration-none text-center">lupa password?</a>
-        
-                        <button name = "submit" type="submit" id="masukBtn" class="Masuk">
-                          Masuk
-                      </button>
-                      
-        
-                    </form>
-                    <a href="{{ route("register") }}" id="daftarBtn" class="btn Daftar">Daftar</a>
-                </div>
-
-        </div>
-    </section>
-
+   
 
 
 

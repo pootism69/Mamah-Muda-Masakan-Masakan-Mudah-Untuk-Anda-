@@ -54,9 +54,6 @@
                         <a class="nav-link" href="{{ route("post") }}">Buat Resep</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="favorit.html">Favorit</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route("akun") }}">
                             <img src="img/Vector.png" width="20" height="20" alt="">
 

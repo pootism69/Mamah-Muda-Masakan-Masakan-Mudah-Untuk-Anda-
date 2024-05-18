@@ -26,15 +26,7 @@
     @foreach($user_recipes as $user_recipe)
     <div class="container-fluid py-5">
         <div class="container">
-            <div class="row">
-                <div class="col text-end">
-                    <div class="row">
-                        <div class="col text-end">
-                            <img id="love-image" class="zoomable" src="img/love-stroke.png" onclick="changeImage()">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="container">
                 <div class="row py-5">
@@ -77,18 +69,18 @@
                 {{ $user_recipe->description }}
             </div>
 
-            <div class="keterangan2">
-                <div class="row py-5">
-                    <div class="col-6">
-                        <h5>Bahan</h5>
-                        <p>{!! nl2br(e($user_recipe->ingredient)) !!}</p>
-                    </div>
-                    <div class="col-6">
-                        <h5>Cara</h5>
-                        <p>{{ $user_recipe->instruction }}</p>
-                    </div>
-                </div>
+
+            <div class="row py-5">
+                <div class="col-md-6">
+                <h5>Bahan</h5>
+                <p class="recipe-text">{!! nl2br(e($user_recipe->ingredient)) !!}</p>
             </div>
+            <div class="col-md-6">
+                <h5>Cara</h5>
+                <p class="recipe-text">{{ $user_recipe->instruction }}</p>
+            </div>
+    </div>
+            
 
             @if($user_recipe->user->id != auth()->user()->id)
             <form action ="/resep/{{$user_recipe->recipeId}}/createReview" method="POST" class="komentar-diri">

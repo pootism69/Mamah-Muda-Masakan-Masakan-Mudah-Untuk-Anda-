@@ -18,58 +18,51 @@
     <title>Pendaftaran</title>
   </head>
   <body>
-    
-    <section class="login  d-flex">
-        <div class="login-left w-50 h-100">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/Mamah muda logo-red png 2.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/image 2.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/image 3.png" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-            
 
-        </div>
-        <div class="login-right w-50 h-100">
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
 
-            <div class="row justify-content-center align-items-center h-100">
-                <div class="col-6">
-                    <div class="header">
-                        <h1>Ayo Daftar</h1>
+
+        <div class="row border rounder-5 p-3 bg-white shadow box-area">
+
+
+            <div class="col-md-6 rounder-4 d-flex justify-content-center align-items-center flex-column left-box">
+                <div class="featured-image mb-3"></div>
+                <img src="img/Mamah muda logo-red png 2.png" class="img-fluid" alt="width: 250px;">
+            </div>
+
+
+            <div class="col-md-6 right-box">
+                    <div class="row align-items-center">
+                        <div class="header">
+                            <h1>Ayo Daftar</h1>
+                        </div>
+                            
+                
+                            <div class="daftar-form">
+                            <form action="register/create" method="POST" class="daftar-form">
+                              @include ('component/pesan')
+                              @csrf
+                                <input type="Username" name="name" class="form-control" id="Username" placeholder="Masukkan Username">
+                                
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Masukkan email">
+                
+                                <input type="Password" name="password" class="form-control" id="Password" placeholder="Masukkan kata sandi">
+                
+                
+                                <button id="daftartologin" class="Daftar">
+                                  Daftar</button>
+                
+                            </div>
+                                </div>
                     </div>
-        
-                    <form action="register/create" method="POST" class="daftar-form">
-                        @include ('component/pesan')
-                        @csrf
-                        <input type="name" name="name" class="form-control" id="Username" placeholder="Masukkan Username">
-                        
-                        <input type="email" name="email" class="form-control" id="email" placeholder="Masukkan email">
-        
-                        <input type="password" name="password" class="form-control" id="Password" placeholder="Masukkan kata sandi">
-        
-        
-                        <button name = "submit" type="submit" id="daftarBtn" class="Daftar">Daftar</button>
-        
-                    </form>
-                </div>
+            </div>
 
-        </div>
-    </section>
+         </div>
+    </div>
+    
+   
+        
+
 
 
 

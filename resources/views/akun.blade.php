@@ -28,8 +28,8 @@
   <div class="container-fluid py-5">
     <div class="container">
       <h2 class="text-center py-3">Akun </h2>
-      
-            <div class="kotak">
+
+          <div class="kotak">
                 <img src="img/Vector (1).png" alt="">
                 <div class="info">
                     <i>{{auth()->user()->name}}</i>

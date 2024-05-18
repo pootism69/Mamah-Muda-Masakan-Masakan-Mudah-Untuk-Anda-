@@ -134,12 +134,12 @@
                 </div>
 
                 <div class="row mb-4">
-                    <div class="col-sm-5 offset-sm-2 justify-content-center"> <!-- Offset-sm-2 untuk menyesuaikan posisi tombol -->
+                    <div class="col-sm-5 offset-sm-2 d-flex justify-content-center justify-content-sm-start" style="padding-left: 40px; padding-right: 40px;"> <!-- Offset-sm-2 untuk menyesuaikan posisi tombol -->
                         <button type="button" class="Edit" onclick="tampilkanPopUpBuatresep()">Edit resep</button> <!-- Menambahkan kelas w-100 untuk membuat tombol menyesuaikan lebar layar -->
                       
                         <div id="popupbuatresep" class="popup">
                             <div class="popup-content">
-                                <p>Resep dibuat</p>
+                                <p>Resep diedit</p>
                                 <button name = "submit" type="submit" >OK</button>
                             </div>
                         </div>

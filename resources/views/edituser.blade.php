@@ -28,43 +28,54 @@
     <form action="{{route('update.account')}}" method="POST" class="container-fluid py-5">
     @csrf
     @method('PUT') <!-- This simulates PUT request -->
-    <div class="container1">
-        <h3 class="text-center py-5">Edit akun</h3>
-        
-        <div class="row mb-4">
-            <label for="Nama" class="col-sm-2 col-form-label">Nama</label>
-            <div class="col-sm-5">
-                <input type="name" name="name"  class="form-control" id="Nama" value="{{ $user->name }}">
-            </div>
-        </div>
-
-        <div class="row mb-4">
-            <label for="email" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-5">
-                <input type="email" name="email"  class="form-control" id="email" value="{{ $user->email }}">
-            </div>
-        </div>
-
-        <div class="row mb-4">
-            <label for="Password" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-5">
-                <input type="password" name="password" class="form-control" id="Password" placeholder="Masukkan kata sandi">
-            </div>
-        </div>
-
-        <div class="row mb-4">
-            <div class="col-sm-5 offset-sm-2 justify-content-center">
-            <button type="button" class="Edit" onclick="tampilkanPopUpEdit()">Edit</button>
-                
-                <div id="popupedit" class="popup">
-                    <div class="popup-content">
-                        <p>Informasi akun sudah diedit</p>
-                        <button type = "submit" name="submit">OK</button>
+    <div class="container-fluid py-5">
+        <div class="container1">
+            <h3 class="text-center py-5">Edit akun</h3>
+            
+            <div class="container2 " style="padding-left: 20px; padding-right: 2S0px;">
+                <div class="row mb-4">
+                    <label for="Nama" class="col-sm-2 col-form-label">Nama</label>
+                    <div class="col-sm-5">
+                        <input type="name" name="name"  class="form-control" id="Nama" value="{{ $user->name }}">
                     </div>
                 </div>
+            
+                <div class="row mb-4">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-5">
+                        <input type="email" name="email"  class="form-control" id="email" value="{{ $user->email }}">
+                    </div>
+                </div>
+            
+                <div class="row mb-4">
+                    <label for="Password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-5">
+                        <input type="password" name="password" class="form-control" id="Password" placeholder="Masukkan kata sandi">
+                    </div>
+                </div>
+            
+                <div class="row mb-4">
+                    <div class="col-sm-5 offset-sm-2 d-flex justify-content-center justify-content-sm-start" style="padding-left: 40px; padding-right: 40px;"> <!-- Menggunakan kelas justify-content-sm-start untuk mengatur posisi tombol ke kiri pada perangkat seluler -->
+                        <button type="button" class="Edit btn btn-primary" onclick="tampilkanPopUpEdit()">Edit</button> <!-- Menambahkan kelas btn dan btn-primary untuk tampilan tombol yang lebih baik -->
+
+                        <div id="popupedit" class="popup">
+                            <div class="popup-content">
+                                <p>Informasi akun sudah diedit</p>
+                                <button onclick="konfirmasiedit()">OK</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
             </div>
+
+           
+            
+            
         </div>
     </div>
+
 </form>
     
     

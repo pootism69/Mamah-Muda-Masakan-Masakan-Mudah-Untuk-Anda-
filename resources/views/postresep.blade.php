@@ -120,20 +120,10 @@
                   </div>
             </div>
 
-            <div class="row mb-3">
-                    <label for="foto" class="col-sm-2 col-form-label">foto masakan</label>
-                    <div class="form-floating col-sm-5">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <label class="file-label" for="file"></label>
-                            <input type="file" accept="image/*" class="image-input" name="file" id="file">
-                        </form>
-                        
-                        
-                      </div>
-                </div>
+            
 
                 <div class="row mb-4">
-                    <div class="col-sm-5 offset-sm-2 justify-content-center"> <!-- Offset-sm-2 untuk menyesuaikan posisi tombol -->
+                    <div class="col-sm-5 offset-sm-2 d-flex justify-content-center justify-content-sm-start" style="padding-left: 40px; padding-right: 40px;"> <!-- Offset-sm-2 untuk menyesuaikan posisi tombol -->
                         <button type="button" class="Edit" onclick="tampilkanPopUpBuatresep()">Buat resep</button> <!-- Menambahkan kelas w-100 untuk membuat tombol menyesuaikan lebar layar -->
                       
                         <div id="popupbuatresep" class="popup">
@@ -144,6 +134,8 @@
                         </div>
                     </div>
                 </div>
+
+                
                 
         </div>
     </form>

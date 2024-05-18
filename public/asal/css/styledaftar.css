@@ -1,43 +1,76 @@
 *{
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+.box-area{
+  width: 930px;
+}
+
+
+*{
+font-family: 'Poppins', sans-serif;
+}
+
+.login{
+height: 100vh;
+}
+
+.header h1 {
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 524;
+font-size: 36px;
+line-height: 96px;
+color: #C91108;
+}
+
+.daftar-form input{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: black;
+margin-bottom: 20px;
+background-color: #EEEEEE;
+border: #EEEEEE;
+}
+
+
+.daftar-form .Daftar{
+margin-top: 20px;
+width: 100%;
+height: 42px;
+background: #C91108;
+border-radius: 8px;
+border-color: #C91108;
+color: white;
+
+}
+
+
+
+
+
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.right-box{
+  padding: 40px 60px 40px 50px;
+}
+
+@media only screen and (max-width: 768px){
+  .box-area{
+    margin: 0 10 px;
   }
-  
-  .login{
-    height: 100vh;
+  .left-box{
+    height: auto;
+    overflow: hidden;
   }
-  
-  .header h1 {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 524;
-    font-size: 40px;
-    line-height: 96px;
-    color: #C91108;
+  .right-box{
+    padding: 20px;
   }
-  
-  .daftar-form input{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: black;
-    margin-bottom: 20px;
-    background-color: #EEEEEE;
-    border: #EEEEEE;
-  }
-  
-  
-  .daftar-form .Daftar{
-    margin-top: 20px;
-    width: 100%;
-    height: 42px;
-    background: #C91108;
-    border-radius: 8px;
-    border-color: #C91108;
-    color: white;
-  
-  }
-  
-  
-  
+}

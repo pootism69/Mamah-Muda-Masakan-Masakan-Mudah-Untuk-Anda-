@@ -63,6 +63,7 @@
 .info {
     flex-grow: 1; /* Menyesuaikan lebar informasi dengan konten */
     overflow: auto; /* Hindari konten melebihi kotak */
+    color: black;
 }
 
 .info i {
@@ -344,5 +345,12 @@ img.img-fluid {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.recipe-text {
+    word-wrap: break-word;
+    word-break: break-all;
+    padding: 15px; /* Adjust this padding as necessary */
+}
+
 
 
