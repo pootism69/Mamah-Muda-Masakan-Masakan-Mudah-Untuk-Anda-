@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class RecipeController extends Controller
 {
     function info($filter){
-        $search = $filter;
+
+            $search = $filter;
         $user_recipes = user_recipe::where(function($query) use ($search) {
 
             $query->where("recipeId","like","%$search%");
@@ -22,6 +23,26 @@ class RecipeController extends Controller
 
         return view("recipe/info", compact("user_recipes","reviews", "search"));
     }
+
+    function infoApi($filter){
+
+        $search = $filter;
+    $user_recipes = user_recipe::where(function($query) use ($search) {
+
+        $query->where("recipeId","like","%$search%");
+     })->get();
+
+    $reviews = review::where(function($query) use ($search) {
+        $query->where("recipeId","like","%$search%");
+    })->get();
+
+    return response()->json($user_recipes);
+    }
+
+
+
+        
+    
 
     function post(){
         return view("postresep");
