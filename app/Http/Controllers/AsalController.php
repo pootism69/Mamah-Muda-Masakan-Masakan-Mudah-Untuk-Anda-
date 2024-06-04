@@ -60,6 +60,64 @@ class AsalController extends Controller
         return view("filter/user", compact("user_recipes","users","search"));
 
     }
+    function asalApi($filter){
+        $search = $filter;
+        $user_recipes = user_recipe::where(function($query) use ($search) {
+
+            $query->where("origin","like","%$search%");
+         })->get();
+
+        
+
+        return response()->json($user_recipes);
+    }
+
+    function categoryApi($filter){
+
+        $search = $filter;
+        $user_recipes = user_recipe::where(function($query) use ($search) {
+
+            $query->where("category","like","%$search%");
+         })->get();
+
+         return response()->json($user_recipes);
+
+    }
+
+    function tahunApi($filter){
+
+        $search = $filter;
+        $user_recipes = user_recipe::where(function($query) use ($search) {
+
+            $query->where("tahun","like","%$search%");
+         })->get();
+
+         return response()->json($user_recipes);
+
+    }
+
+    function userApiResep($filter){
+
+        $search = $filter;
+         $user_recipes = user_recipe::where(function($query) use ($search) {
+
+            $query->where("userId","like","%$search%");
+         })->get();
+
+         return response()->json($user_recipes);
+
+    }
+
+    function userApi($filter){
+        $search = $filter;
+        $users = User::where(function($query) use ($search) {
+
+            $query->where("id","like","%$search%");
+         })->get();
+
+         return response()->json($users);
+    }
+
 
 
 }

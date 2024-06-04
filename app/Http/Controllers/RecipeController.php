@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\review;
 use App\Models\user_recipe;
+use Illuminate\Support\Facades\Validator;
 
 
 use Illuminate\Http\Request;
@@ -132,5 +133,105 @@ class RecipeController extends Controller
 
         return redirect()->route("resep", ['filter' => $filter ])->with('success', 'Resep Berhasil di edit');
     }
+
+    
+
+function createApi(Request $request) {
+    $validator = Validator::make($request->all(), [
+        'name' => 'required',
+        'bahan' => 'required',
+        'instruction' => 'required',
+        'waktu' => 'required',
+    ], [
+        'name.required' => 'harap masukan nama',
+        'bahan.required' => 'harap masukan bahan',
+        'instruction.required' => 'harap masukan instruksi',
+        'waktu.required' => 'harap maksukan waktu',
+    ]);
+
+    if ($validator->fails()) {
+        return response()->json([
+            'errors' => $validator->errors()
+        ], 400);  // HTTP status code 400 for Bad Request
+    }
+
+    $data = [
+        'title' => $request->name,
+        'userId' => $request->userId,
+        'category' => $request->category,
+        'tahun' => $request->tahun,
+        'origin' => $request->khas,
+        'tingkat' => $request->tingkat,
+        'timeToCook' => $request->waktu,
+        'ingredient' => $request->bahan,
+        'instruction' => $request->instruction,
+    ];
+
+    $userRecipe = user_recipe::create($data);
+
+    return response()->json([
+        'message' => 'Recipe created successfully',
+        'data' => $userRecipe
+    ], 201);  // HTTP status code 201 for Created
+}
+function destroyApi($filter) {
+    $deleted = user_recipe::destroy($filter);
+
+    if ($deleted) {
+        return response()->json([
+            'message' => 'Recipe deleted successfully'
+        ], 200);  // HTTP status code 200 for OK
+    } else {
+        return response()->json([
+            'message' => 'Recipe not found or could not be deleted'
+        ], 404);  // HTTP status code 404 for Not Found
+    }
+}
+
+function editApi(Request $request, $filter) {
+    $validator = Validator::make($request->all(), [
+        'name' => 'required',
+        'bahan' => 'required',
+        'instruction' => 'required',
+        'waktu' => 'required',
+    ], [
+        'name.required' => 'harap masukan nama',
+        'bahan.required' => 'harap masukan bahan',
+        'instruction.required' => 'harap masukan instruksi',
+        'waktu.required' => 'harap maksukan waktu',
+    ]);
+
+    if ($validator->fails()) {
+        return response()->json([
+            'errors' => $validator->errors()
+        ], 400);  // HTTP status code 400 for Bad Request
+    }
+
+    $data = [
+        'title' => $request->name,
+        'category' => $request->category,
+        'tahun' => $request->tahun,
+        'origin' => $request->khas,
+        'tingkat' => $request->tingkat,
+        'timeToCook' => $request->waktu,
+        'ingredient' => $request->bahan,
+        'instruction' => $request->instruction,
+    ];
+
+    $userRecipe = user_recipe::where('recipeId', $filter)->first();
+
+    if ($userRecipe) {
+        $userRecipe->update($data);
+
+        return response()->json([
+            'message' => 'Recipe updated successfully',
+            'data' => $userRecipe
+        ], 200);  // HTTP status code 200 for OK
+    } else {
+        return response()->json([
+            'message' => 'Recipe not found'
+        ], 404);  // HTTP status code 404 for Not Found
+    }
+}
 
 }

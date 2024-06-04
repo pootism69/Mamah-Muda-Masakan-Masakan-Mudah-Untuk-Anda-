@@ -116,5 +116,68 @@ class SessionController extends Controller
         return redirect("/akun");
     }
 
+    function logoutApi() {
+        Auth::logout();
+        return response()->json(['message' => 'Logged out successfully'], 200);
+    }
+    
+    function loginApi(Request $request) {
+        $request->validate([
+            'name' => 'required',
+            'password' => 'required'
+        ], [
+            'name.required' => 'username harus diisi',
+            'password.required' => 'password harus diisi'
+        ]);
+    
+        $infologin = [
+            'name' => $request->name,
+            'password' => $request->password
+        ];
+    
+        if (Auth::attempt($infologin)) {
+            $user = Auth::user();
+            $token = $user->createToken('authToken')->plainTextToken;
+            return response()->json(['user' => $user, 'token' => $token], 200);
+        } else {
+            return response()->json(['error' => 'username atau password salah'], 401);
+        }
+    }
+    
+    function createApi(Request $request) {
+        $request->validate([
+            'name' => 'required|unique:users',
+            'email' => 'required|email|unique:users',
+            'password' => 'required'
+        ], [
+            'name.required' => 'username harus diisi',
+            'name.unique' => 'username sudah di ambil',
+            'email.required' => 'email harus diisi',
+            'email.email' => 'Silahkan masukan email yang valid',
+            'email.unique' => 'email sudah pernah didaftarkan, silahkan login',
+            'password.required' => 'password harus diisi'
+        ]);
+    
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password) // Hashing the password
+        ];
+        User::create($data);
+    
+        $infologin = [
+            'name' => $request->name,
+            'password' => $request->password
+        ];
+    
+        if (Auth::attempt($infologin)) {
+            $user = Auth::user();
+            $token = $user->createToken('authToken')->plainTextToken;
+            return response()->json(['user' => $user, 'token' => $token], 201);
+        } else {
+            return response()->json(['error' => 'pendaftaran gagal somehow'], 500);
+        }
+    }
+
 
 }
